@@ -29,6 +29,7 @@ db new
 ```
 
 spit out secrets in a .env file
+
 good to have: copy the secrets into a custom config file
 
 &nbsp;
