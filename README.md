@@ -79,6 +79,14 @@ or help out with the implementation, DM me on [twitter](https://twitter.com/sidd
 
 &nbsp;
 
+### inspiration/prior art
+
+- inspired by the simplicity of [zeit/now](https://zeit.co/now)
+- [firebase by google](https://firebase.google.com)
+- [pronto by Vadim Demedes](https://github.com/vadimdemedes/pronto)
+
+&nbsp;
+
 ### implementation details
 
 this is super rough
