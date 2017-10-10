@@ -1,7 +1,7 @@
 <p align="center">
-  <img src="https://raw.githubusercontent.com/siddharthkp/db/master/art/logo.png" height="200px"/>
+  <img src="https://raw.githubusercontent.com/siddharthkp/dbee/master/art/logo.png" height="200px"/>
   <br><br>
-  <b>db lets you store data for your apps with zero setup</b>
+  <b>dbee lets you store data for your apps with zero setup</b>
   <br>
 </p>
 
@@ -25,7 +25,7 @@ I see myself repeating the same steps with every side project:
 1) Zero config setup
 
 ```
-db new
+dbee new
 ```
 
 spit out secrets in a .env file
@@ -37,7 +37,7 @@ good to have: copy the secrets into a custom config file
 2) Super simple API
 
 ```js
-  import db from 'db'
+  import db from 'dbee'
   // auto initialise
 
   db.add('users', {name: 'Siddharth', handle: 'siddharthkp'})
@@ -59,7 +59,7 @@ good to have:
 
 ```js
   // support for custom config
-  import { init } from 'db'
+  import { init } from 'dbee'
   init({identifier: 'my_app', secret: 'super_secret'})
 
   // prefetch all entries in a table and store in cache for perf
