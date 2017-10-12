@@ -99,3 +99,8 @@ this is super rough
 6. good to have: preload data on to the api layer for extra perf
 7. good to have: auto index based on common queries, the user shouldn't have to bother
 8. good to have: paid plan to increase limits
+
+
+<a target='_blank' rel='nofollow' href='http://app.codesponsor.io/link/LhLT2c31ydJzdLUuSR9f8mCA/siddharthkp/keep'>
+  <img alt='Sponsor' width='888' height='68' src='http://app.codesponsor.io/embed/LhLT2c31ydJzdLUuSR9f8mCA/siddharthkp/keep.svg' />
+</a>
