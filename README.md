@@ -1,7 +1,7 @@
 <p align="center">
-  <img src="https://raw.githubusercontent.com/siddharthkp/dbee/master/art/logo.png" height="200px"/>
+  <img src="https://raw.githubusercontent.com/siddharthkp/keep/master/art/logo.png" height="200px"/>
   <br><br>
-  <b>dbee lets you store data for your apps with zero setup</b>
+  <b>keep lets you store data for your apps with zero setup</b>
   <br>
 </p>
 
@@ -25,7 +25,7 @@ I see myself repeating the same steps with every side project:
 1) Zero config setup
 
 ```
-dbee new
+keep new
 ```
 
 spit out secrets in a .env file
@@ -37,36 +37,36 @@ good to have: copy the secrets into a custom config file
 2) Super simple API
 
 ```js
-  import db from 'dbee'
+  import keep from 'keep'
   // auto initialise
 
-  db.add('users', {name: 'Siddharth', handle: 'siddharthkp'})
+  keep.add('users', {name: 'Siddharth', handle: 'siddharthkp'})
   // returns a promise, resolves to give id/hash
 
-  db.get('users', {id: 1})
+  keep.get('users', {id: 1})
   // {name: 'Siddharth', handle: 'siddharthkp'}
 
-  db.get('repos', {user_id: 1})
+  keep.get('repos', {user_id: 1})
   // [{name: 'bundlesize', forks: 68}, {name: 'db', forks: 0}]
 
-  db.find('users', {name: 'sid'})
+  keep.find('users', {name: 'sid'})
   // [{id: 1, name: 'Siddharth', handle: 'siddharthkp'}, {id: 9, name: 'Sid Vicious', handle: 'vicious'}]
 
-  db.delete('users', {id: 1})
+  keep.delete('users', {id: 1})
 ```
 
 good to have:
 
 ```js
   // support for custom config
-  import { init } from 'dbee'
+  import { init } from 'keep'
   init({identifier: 'my_app', secret: 'super_secret'})
 
   // prefetch all entries in a table and store in cache for perf
-  db.prefetch('users')
+  keep.prefetch('users')
 
   // prefetch data from all tables for a user and store in cache for convenience
-  db.prefetch({user_id: 1})
+  keep.prefetch({user_id: 1})
 ```
 
 &nbsp;
