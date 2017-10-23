@@ -95,16 +95,3 @@ or help out with the implementation, DM me on [twitter](https://twitter.com/sidd
 - [pronto by Vadim Demedes](https://github.com/vadimdemedes/pronto)
 
 &nbsp;
-
-### implementation details
-
-this is super rough
-
-1. each app get's an identifier, this tied up with the secret is how you access data
-2. a table = f(identifier + secret + name)
-3. api layer in between the user and database
-4. use firebase/aws dynamo as the true store
-5. add limits on project level
-6. good to have: preload data on to the api layer for extra perf
-7. good to have: auto index based on common queries, the user shouldn't have to bother
-8. good to have: paid plan to increase limits
