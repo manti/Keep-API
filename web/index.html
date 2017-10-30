@@ -1,0 +1,44 @@
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="static/style.css"/>
+    <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300" rel="stylesheet">
+  </head>
+  <body>
+    <header>
+      <h1>Introducing <span class="highlight">keep</span></h1>
+      <h3 class="highlight">focus on data, not managing databases</h3>
+      <div class="demo">
+        <div id="terminal">
+          <div id="terminal-bar">
+            <span class="red"></span>
+            <span class="yellow"></span>
+            <span class="green"></span>
+            <span id="filename">index.js</span>
+          </div>
+          <div id="terminal-content"></div>
+        </div>
+      </div>
+    </header>
+    <div class="features">
+      <h3><span class="highlight">simple</span>, get started in 30 seconds</h3>
+      <h3><span class="highlight">fast!</span> ready for production</h3>
+      <h3><span class="highlight">secure</span>, only you can access your data</h3>
+    </div>
+    <div id="cta">
+      <input id="email" type="email" placeholder="enter your email address"/>
+      <a id="action" class="button" onclick="register()">Get keep</a>
+      <div class="plan">free for the first 10K transactions, 15$/mo after that</div>
+    </div>
+    <script src="static/terminal.js"></script>
+    <script src="https://unpkg.com/reqwest@2.0.5/reqwest.min.js"></script>
+    <div class="tweet">
+      Share this page with your friends!
+      <br>
+      <br>
+      <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-size="large" data-text="Need a super simple database?" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+    </div>
+  </body>
+</html>

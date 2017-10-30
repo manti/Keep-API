@@ -1,0 +1,150 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Lato', sans-serif;
+  background: #000;
+  color: #fff;
+  text-align: center;
+  font-size: 16px;
+}
+header {
+  padding: 20px 0;
+}
+h1,
+h3 {
+  font-weight: 300;
+}
+h1 {
+  font-size: 48px;
+}
+.demo {
+  margin: 100px 0 25px;
+}
+a,
+.highlight {
+  color: #3ab2ff;
+}
+#terminal {
+  border: 1px solid #eee;
+  border-radius: 5px;
+  width: 500px;
+  max-width: 98%;
+  text-align: left;
+  margin: 0 auto;
+}
+#terminal-bar {
+  padding: 5px 10px;
+  position: relative;
+}
+#terminal-bar span {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+}
+#terminal-bar .red {
+  background: #d71e23;
+}
+#terminal-bar .yellow {
+  background: #fbd151;
+}
+#terminal-bar .green {
+  background: #48ae40;
+}
+#terminal-bar #filename {
+  display: none;
+  position: absolute;
+  width: 100%;
+  top: 5px;
+  left: 0;
+  text-align: center;
+  color: #43516d;
+}
+#terminal-content {
+  padding: 0 10px;
+  height: 250px;
+  overflow: hidden;
+}
+pre {
+  font-size: 18px;
+  font-family: 'Source Code Pro', monospace;
+  margin: 10px 0;
+}
+pre .keyword {
+  color: #3f895f;
+}
+pre .variable {
+  color: #e3aad6;
+}
+pre .function {
+  color: #3f895f;
+}
+pre .operator {
+  color: #e9eded;
+}
+pre.comment {
+  color: #43516d;
+}
+pre.link {
+  color: #3ab2ff;
+  cursor: pointer;
+}
+
+.features {
+  text-align: left;
+  width: 500px;
+  max-width: 98%;
+  margin: 50px auto 75px;
+}
+.features h3 {
+  padding: 0 10px;
+}
+
+#cta {
+  width: 500px;
+  max-width: 100%;
+  margin: 50px auto 50px;
+}
+.button {
+  text-decoration: none;
+  border-radius: 2px;
+  background: #3ab2ff;
+  color: #fff;
+  display: inline-block;
+  padding: 0 50px;
+  height: 50px;
+  line-height: 50px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  transition: background-color 1s;
+}
+.button:hover {
+  background: #eee;
+  color: #3ab2ff;
+}
+#email {
+  height: 48px;
+  margin: 0;
+  outline: none;
+  border: none;
+  font-family: 'Lato', 'sans-serif';
+  font-size: 16px;
+  padding-left: 10px;
+  border-radius: 2px;
+  width: 250px;
+  padding-left: 10px;
+}
+@media screen and (max-width: 480px) {
+  .button,
+  #email {
+    width: 95%;
+    margin: 5px auto;
+    display: block;
+    padding: 0;
+    text-align: center;
+  }
+}
+.tweet {
+  margin: 100px auto;
+}
