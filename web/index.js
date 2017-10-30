@@ -12,7 +12,7 @@ app.use('/static', express.static('static'))
 app.get('/', (req, res) => res.sendFile(path.join(__dirname + '/index.html')))
 app.post('/register', (req, res) => {
   const { email } = req.body
-  keep.set('users', { email }).then(_ => {
+  keep.add('users', { email }).then(_ => {
     // sendConfirmation(email)
     res.end()
   })

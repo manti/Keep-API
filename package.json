@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/siddharthkp/keep/issues"
   },
-  "homepage": "https://github.com/siddharthkp/keep#readme"
+  "homepage": "https://github.com/siddharthkp/keep#readme",
+  "dependencies": {
+    "axios": "0.17.0"
+  }
 }

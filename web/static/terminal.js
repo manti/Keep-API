@@ -123,7 +123,7 @@ const play = _ => {
     .then(_ => type("const store = require('keep');", 'code'))
     .then(_ => insertLine())
     .then(_ => type('// set data', 'comment'))
-    .then(_ => type("store.set('users', {", 'code'))
+    .then(_ => type("store.add('users', {", 'code'))
     .then(_ => type("  name: 'sid',", 'code'))
     .then(_ => type("  handle: '@siddharthkp',", 'code'))
     .then(_ => type('  tweets: 2097', 'code'))
