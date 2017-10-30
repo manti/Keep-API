@@ -1,0 +1,23 @@
+{
+  "name": "keep",
+  "version": "1.0.0",
+  "description": "<p align=\"center\">   <img src=\"https://raw.githubusercontent.com/siddharthkp/keep/master/art/logo.png\" height=\"200px\"/>   <br><br>   <b>keep lets you store data for your apps with zero setup</b>   <br> </p>",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/siddharthkp/keep.git"
+  },
+  "keywords": [],
+  "author": "siddharthkp",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/siddharthkp/keep/issues"
+  },
+  "homepage": "https://github.com/siddharthkp/keep#readme"
+}
