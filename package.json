@@ -1,13 +1,15 @@
 {
-  "name": "keep",
+  "name": "keep-repo",
   "version": "1.0.0",
-  "description": "<p align=\"center\">   <img src=\"https://raw.githubusercontent.com/siddharthkp/keep/master/art/logo.png\" height=\"200px\"/>   <br><br>   <b>keep lets you store data for your apps with zero setup</b>   <br> </p>",
-  "main": "index.js",
-  "directories": {
-    "lib": "lib"
-  },
+  "description": "",
+  "main": "lib/index.js",
+  "bin": "cli/index.js",
+  "directories": ["cli", "lib"],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "run-s api:start lib:test api:stop",
+    "api:start": "cd api && npm start",
+    "api:stop": "cd api && npm stop",
+    "lib:test": "cd tests && npm test"
   },
   "repository": {
     "type": "git",
@@ -21,6 +23,6 @@
   },
   "homepage": "https://github.com/siddharthkp/keep#readme",
   "dependencies": {
-    "axios": "0.17.0"
+    "npm-run-all": "4.1.1"
   }
 }

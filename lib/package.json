@@ -1,18 +1,16 @@
 {
-  "name": "keep-api",
+  "name": "keep",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "pm2 start index.js",
-    "stop": "pm2 kill"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "siddharthkp",
   "license": "MIT",
   "dependencies": {
-    "body-parser": "1.18.2",
-    "express": "4.16.2",
-    "firebase-admin": "5.4.3"
+    "axios": "0.17.0",
+    "dotenv": "4.0.0"
   }
 }
