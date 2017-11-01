@@ -3,18 +3,6 @@ const keep = require('../lib')
 const firebase = require('firebase-tools')
 require('dotenv').config()
 
-/* clean out the database before starting */
-test.before(async t => {
-  console.log('cleaning up database before starting...')
-  await firebase.firestore
-    .delete('data/' + process.env.KEEP_APP_ID, {
-      token: process.env.KEEP_PROJECT_TOKEN,
-      recursive: true,
-      yes: true
-    })
-    .catch(error => console.log(error))
-})
-
 const user1 = { name: 'sid', handle: '@siddharthkp', tweets: 1000 }
 const user2 = { key: 'duck', name: 'duck', handle: '@duckles', tweets: 500 }
 
@@ -69,4 +57,16 @@ test('find users by param', async t => {
 test('delete user', async t => {
   const response = await keep.delete('users', { key: generatedKey })
   t.truthy(response)
+})
+
+/* clean out the database */
+test.after(async t => {
+  console.log('\n cleaning up database before starting...')
+  await firebase.firestore
+    .delete('data/' + process.env.KEEP_APP_ID, {
+      token: process.env.KEEP_PROJECT_TOKEN,
+      recursive: true,
+      yes: true
+    })
+    .catch(error => console.log(error))
 })

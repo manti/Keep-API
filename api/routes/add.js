@@ -1,8 +1,9 @@
+const { pullTable } = require('../helpers')
+
 const add = (req, res, db) => {
   const data = req.body.params
 
-  const table = data._table
-  delete data._table
+  const table = pullTable(data)
 
   const appId = req.headers.keep_app_id
   const appStore = db.collection('data').doc(appId)

@@ -1,9 +1,10 @@
+const { pullTable } = require('../helpers')
+
 const get = (req, res, db) => {
   const query = req.query
   delete query.mode
 
-  const table = query._table
-  delete query._table
+  const table = pullTable(query)
 
   const key = query.key
 

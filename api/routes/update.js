@@ -1,10 +1,11 @@
+const { pullTable } = require('../helpers')
+
 const get = require('./get')
 
 const update = (req, res, db) => {
   const data = req.body.params
 
-  const table = data._table
-  delete data._table
+  const table = pullTable(data)
 
   const key = data.key
 

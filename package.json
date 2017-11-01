@@ -6,7 +6,7 @@
   "bin": "cli/index.js",
   "directories": ["cli", "lib"],
   "scripts": {
-    "test": "run-s api:start lib:test api:stop || api:stop",
+    "test": "run-s api:start lib:test api:stop || run-s api:stop",
     "api:start": "cd api && npm start",
     "api:stop": "cd api && npm stop",
     "lib:test": "cd tests && npm test"
