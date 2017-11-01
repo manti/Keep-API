@@ -54,6 +54,16 @@ test('find users by param', async t => {
   t.deepEqual(response, expectedResponse)
 })
 
+test('get all users', async t => {
+  /* the expected response is an array of users */
+  const updatedUser1 = Object.assign({}, user1, { key: generatedKey, name: 'siddharth' })
+  const expectedResponse = [updatedUser1, user2]
+
+  const response = await keep.all('users')
+
+  t.deepEqual(response, expectedResponse)
+})
+
 test('delete user', async t => {
   const response = await keep.delete('users', { key: generatedKey })
   t.truthy(response)

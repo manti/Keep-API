@@ -12,7 +12,7 @@ const { table, store } = require('./middlewares')
 app.use('/api', [store, table])
 
 /* define routes */
-const { add, del, find, get, update } = require('./routes')
+const { add, del, find, get, update, all } = require('./routes')
 
 app.post('/api', add)
 app.patch('/api', update)
@@ -21,6 +21,7 @@ app.delete('/api', del)
 /* get can mean either of get by key or find by param */
 app.get('/api', (req, res) => {
   if (req.query.mode === 'find') find(req, res)
+  if (req.query.mode === 'all') all(req, res)
   else get(req, res)
 })
 
