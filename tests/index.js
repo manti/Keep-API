@@ -48,6 +48,15 @@ test('add with custom key', async t => {
   t.is(response.key, user2.key)
 })
 
+test('update user by key', async t => {
+  /* create the expected response with the generated key */
+  const expectedResponse = Object.assign({}, user1, { key: generatedKey, name: 'siddharth' })
+
+  const response = await keep.update('users', generatedKey, { name: 'siddharth' })
+
+  t.deepEqual(response, expectedResponse)
+})
+
 test('find users by param', async t => {
   /* the expected response is an array of users */
   const expectedResponse = [user2]

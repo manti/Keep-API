@@ -1,4 +1,4 @@
-const post = (req, res, db) => {
+const add = (req, res, db) => {
   const data = req.body.params
 
   const table = data._table
@@ -22,4 +22,4 @@ const post = (req, res, db) => {
   }
 }
 
-module.exports = post
+module.exports = add
