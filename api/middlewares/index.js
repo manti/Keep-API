@@ -1,4 +1,4 @@
 const table = require('./table')
-const store = require('./store')
+const { store, meta } = require('./store')
 
-module.exports = { table, store }
+module.exports = { table, store, meta }

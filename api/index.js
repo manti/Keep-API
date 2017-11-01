@@ -8,11 +8,12 @@ const bodyParser = require('body-parser')
 app.use(bodyParser.json())
 
 /* add middlewares for common tasks */
-const { table, store } = require('./middlewares')
-app.use('/api', [store, table])
+const { table, store, meta } = require('./middlewares')
+app.use('/api', [store, meta, table])
+app.use('/init', meta)
 
 /* define routes */
-const { add, del, find, get, update, all } = require('./routes')
+const { add, del, find, get, update, all, init } = require('./routes')
 
 app.post('/api', add)
 app.patch('/api', update)
@@ -24,6 +25,9 @@ app.get('/api', (req, res) => {
   if (req.query.mode === 'all') all(req, res)
   else get(req, res)
 })
+
+/* init  */
+app.post('/init', init)
 
 /* start the server! */
 app.listen(3000, () => console.log('server ready'))

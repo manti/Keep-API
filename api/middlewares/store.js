@@ -11,4 +11,10 @@ const getStore = (req, res, next) => {
   next()
 }
 
-module.exports = getStore
+getMeta = (req, res, next) => {
+  const meta = db.collection('data').doc('_meta')
+  res.locals.meta = meta
+  next()
+}
+
+module.exports = { store: getStore, meta: getMeta }
