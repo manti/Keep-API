@@ -23,7 +23,7 @@ test('get user by key', async t => {
   /* create the expected response with the generated key */
   const expectedResponse = Object.assign({}, user1, { key: generatedKey })
 
-  const response = await keep.get('users', { key: generatedKey })
+  const response = await keep.get('users', generatedKey)
 
   t.deepEqual(response, expectedResponse)
 })

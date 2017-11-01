@@ -49,19 +49,27 @@ good to have: copy the secrets into a custom config file
   import keep from 'keep'
   // auto initialise
 
-  keep.add('users', {name: 'Siddharth', handle: 'siddharthkp'})
-  // returns a promise, resolves to give id/hash
+  keep.add('users', { name: 'sid', handle: 'siddharthkp' })
+  // { key: 'awdd33', name: 'sid', handle: 'siddharthkp' }
 
-  keep.get('users', {id: 1})
-  // {name: 'Siddharth', handle: 'siddharthkp'}
+  // or provide your own key
+  keep.add('users', { key: 'user-242', name: 'duck', handle: 'duckles' })
+  // { key: 'user-242', name: 'duck', handle: 'duckles' }
 
-  keep.get('repos', {user_id: 1})
-  // [{name: 'bundlesize', forks: 68}, {name: 'db', forks: 0}]
+  keep.get('users', 'awdd33')
+  // { key: 'awdd33', name: 'sid', handle: 'siddharthkp' }
 
-  keep.find('users', {name: 'sid'})
-  // [{id: 1, name: 'Siddharth', handle: 'siddharthkp'}, {id: 9, name: 'Sid Vicious', handle: 'vicious'}]
+  keep.update('users', 'awdd33', { name: 'siddharth' })
+  // { key: 'awdd33', name: 'siddharth', handle: 'siddharthkp' }
 
-  keep.delete('users', {id: 1})
+  keep.find('users', { name: 'siddharth' })
+  /* [
+       { key: 'awdd33', name: 'siddharth', handle: 'siddharthkp' },
+       { key: 'yui368', name: 'siddharth', 'handle: 'otherguy' }
+     ]
+  */
+
+  keep.delete('users', {id: 'awdd33'})
 ```
 
 good to have:
