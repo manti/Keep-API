@@ -1,16 +1,11 @@
-const { pullTable } = require('../helpers')
-
-const del = (req, res, db) => {
+const del = (req, res) => {
   const query = req.query
 
-  const table = pullTable(query)
+  const { table, store } = res.locals
 
   const key = query.key
 
-  const appId = req.headers.keep_app_id
-  const appStore = db.collection('data').doc(appId)
-
-  const ref = appStore.collection(table).doc(key)
+  const ref = store.collection(table).doc(key)
 
   ref.delete().then(_ => res.send(true))
 }

@@ -1,15 +1,10 @@
-const { pullTable } = require('../helpers')
-
-const find = (req, res, db) => {
+const find = (req, res) => {
   const query = req.query
   delete query.mode
 
-  const table = pullTable(query)
+  const { table, store } = res.locals
 
-  const appId = req.headers.keep_app_id
-  const appStore = db.collection('data').doc(appId)
-
-  let queryRef = appStore.collection(table)
+  let queryRef = store.collection(table)
   Object.keys(query).map(key => {
     queryRef = queryRef.where(key, '==', query[key])
   })

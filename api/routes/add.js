@@ -1,14 +1,9 @@
-const { pullTable } = require('../helpers')
-
-const add = (req, res, db) => {
+const add = (req, res) => {
   const data = req.body.params
 
-  const table = pullTable(data)
+  const { table, store } = res.locals
 
-  const appId = req.headers.keep_app_id
-  const appStore = db.collection('data').doc(appId)
-
-  const tableRef = appStore.collection(table)
+  const tableRef = store.collection(table)
 
   if (data.key) {
     tableRef

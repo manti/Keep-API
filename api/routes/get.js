@@ -1,17 +1,12 @@
-const { pullTable } = require('../helpers')
-
-const get = (req, res, db) => {
+const get = (req, res) => {
   const query = req.query
   delete query.mode
 
-  const table = pullTable(query)
+  const { table, store } = res.locals
 
   const key = query.key
 
-  const appId = req.headers.keep_app_id
-  const appStore = db.collection('data').doc(appId)
-
-  const ref = appStore.collection(table).doc(key)
+  const ref = store.collection(table).doc(key)
 
   ref.get().then(doc => {
     const data = doc.data()

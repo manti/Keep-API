@@ -1,18 +1,13 @@
-const { pullTable } = require('../helpers')
-
 const get = require('./get')
 
-const update = (req, res, db) => {
+const update = (req, res) => {
   const data = req.body.params
 
-  const table = pullTable(data)
+  const { table, store } = res.locals
 
   const key = data.key
 
-  const appId = req.headers.keep_app_id
-  const appStore = db.collection('data').doc(appId)
-
-  const ref = appStore.collection(table).doc(key)
+  const ref = store.collection(table).doc(key)
 
   ref.update(data).then(_ => {
     ref.get().then(doc => {
