@@ -1,37 +1,31 @@
 const express = require('express')
-const path = require('path')
-const bodyParser = require('body-parser')
 
-const add = require('./routes/add')
-const del = require('./routes/delete')
-const find = require('./routes/find')
-const get = require('./routes/get')
-const update = require('./routes/update')
-
+/* create a new express app */
 const app = express()
 
+/* add body parser middleware for json decoding */
+const bodyParser = require('body-parser')
 app.use(bodyParser.json())
 
+/* add middlewares for common tasks */
 const { table, store } = require('./middlewares')
-app.use('/api', store)
-app.use('/api', table)
+app.use('/api', [store, table])
 
-// find != get
-// let people pick their id
-// get works only on id
+/* define routes */
+const { add, del, find, get, update } = require('./routes')
 
-app.post('/api', (req, res) => add(req, res))
-app.delete('/api', (req, res) => del(req, res))
+app.post('/api', add)
+app.patch('/api', update)
+app.delete('/api', del)
 
+/* get can mean either of get by key or find by param */
 app.get('/api', (req, res) => {
   if (req.query.mode === 'find') find(req, res)
   else get(req, res)
 })
 
-app.patch('/api', (req, res) => update(req, res))
-
+/* start the server! */
 app.listen(3000, () => console.log('server ready'))
 
-process.on('unhandledRejection', error => {
-  console.log('unhandledRejection', error)
-})
+/* catch unhandled errors */
+process.on('unhandledRejection', err => console.log('unhandledRejection', err))
