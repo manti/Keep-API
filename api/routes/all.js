@@ -3,7 +3,7 @@ const all = (req, res) => {
 
   const ref = store.collection(table)
 
-  const allData = []
+  let allData = []
 
   ref.get().then(docs => {
     docs.forEach(doc => {
@@ -11,6 +11,9 @@ const all = (req, res) => {
       data.key = doc.id
       allData.push(data)
     })
+
+    allData = allData.sort(key)
+
     res.end(JSON.stringify(allData))
   })
 }
