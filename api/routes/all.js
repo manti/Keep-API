@@ -12,8 +12,7 @@ const all = (req, res) => {
       allData.push(data)
     })
 
-    allData = allData.sort(key)
-
+    allData = allData.sort((a, b) => a.key > b.key)
     res.end(JSON.stringify(allData))
   })
 }

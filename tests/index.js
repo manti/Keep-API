@@ -70,7 +70,7 @@ test('delete user', async t => {
 })
 
 /* clean out the database */
-test.after(async t => {
+test.after.always(async t => {
   console.log('\n cleaning up database before starting...')
   await firebase.firestore
     .delete('data/' + process.env.KEEP_APP_ID, {
